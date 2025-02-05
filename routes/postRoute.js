@@ -1,16 +1,9 @@
 const express = require('express')
+const { register,login,logout} = require('../controllers/authController')
 const router =express.Router()
 
-router.get('/test',(req,res)=>{
-    console.log("router works")
-})
-router.post('/test',(req,res)=>{
-    console.log("router works")
-})
-router.put('/test',(req,res)=>{
-    console.log("router works")
-})
-router.delete('/test',(req,res)=>{
-    console.log("router works")
-})
+router.post("/register",register);
+router.post("/login",login);
+router.post("/logout",logout);
+
 module.exports=router;

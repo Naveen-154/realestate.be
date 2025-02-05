@@ -5,7 +5,6 @@ const prisma = require('../lib/prisma.js');
 const register = async (req, res) => {
     const { username, email, password } = req.body;
     try {
-        // Check if the username already exists
         const existingUser = await prisma.user.findUnique({
             where: { username }
         });
@@ -46,15 +45,17 @@ const login = async (req, res) => {
 
         const age = 1000 * 60 * 60 * 24 * 7;
         const token = jwt.sign({
-            id: user.id
+            id: user.id,
+            isAdmin: false,
         }, process.env.JWT_SECRET_KEY, {
             expiresIn: age
         });
+        const {password:userPassword,...userInfo} = user
 
         res.cookie("token", token, {
             httpOnly: true,
             maxAge: age,
-        }).status(200).json({ message: "Login successful" });
+        }).status(200).json(userInfo);
 
     } catch (err) {
         console.error('Error during login:', err);
