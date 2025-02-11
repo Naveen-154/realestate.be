@@ -12,10 +12,10 @@ const port = 3500;
 
 
 app.use(cors({
-    origin: "https://realestate-fe-f6uh.vercel.app/",  // Set exact frontend URL
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: 'https://realestate-fe-f6uh.vercel.app',
+    credentials: true
 }));
+
 
 
 app.use(express.json());
