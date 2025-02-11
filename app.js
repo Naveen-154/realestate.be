@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors')
 
-const authRoute = require('./routes/authRoute');
-const testRoute = require('./routes/testRoute');
-const userRoute = require('./routes/userRoute');
-const postRoute = require('./routes/postRoute')
+const authRoute = require('./routes/authRoute.js');
+const testRoute = require('./routes/testRoute.js');
+const userRoute = require('./routes/userRoute.js');
+const postRoute = require('./routes/postRoute.js')
 const cookieParser = require('cookie-parser');
 
 const app = express();
