@@ -12,9 +12,11 @@ const port = 3500;
 
 
 app.use(cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true
+    origin: "https://realestate-fe-f6uh.vercel.app/",  // Set exact frontend URL
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
