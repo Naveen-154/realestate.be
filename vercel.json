@@ -11,10 +11,6 @@
             "src": "/(.*)",
             "dest": "app.js"
         }
-    ],
-    "build": {
-        "env": {
-            "DATABASE_URL": "mongodb+srv://root:root@cluster0.b9jmtcc.mongodb.net/estate?retryWrites=true&w=majority&appName=Cluster0"
-        }
-    }
+    ]
+   
 }
