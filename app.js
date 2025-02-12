@@ -12,7 +12,7 @@ const port = 3500;
 
 
 app.use(cors({
-    origin: 'https://realestate-fe-f6uh.vercel.app',
+    origin: 'http://localhost:5173/',
     credentials: true
 }));
 
